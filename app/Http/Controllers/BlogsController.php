@@ -9,7 +9,7 @@ class BlogsController extends Controller
 {
     public function index(){
         $blogs = Blog::all();
-        return view('blogs.index', compact('blogs'));
+        return view('blogs.index', ['blogs'=> $blogs]);
     }
 
     public function create(){
@@ -24,7 +24,19 @@ class BlogsController extends Controller
 
     public function show($id){
         $blog = Blog::findOrFail($id);
-        return view('blogs.show', compact('blog'));
+        return view('blogs.show', ['blog'=> $blog]);
+    }
+
+    public function edit($id){
+        $blog = Blog::findOrFail($id);
+        return view('blogs.edit', ['blog'=> $blog]);
+    }
+
+    public function update(Request $request, $id){
+        $input = $request->all();
+        $blog = Blog::findOrFail($id);
+        $blog->update($input);
+        return redirect('blogs');
     }
 
 }
