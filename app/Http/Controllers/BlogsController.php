@@ -45,4 +45,9 @@ class BlogsController extends Controller
         return redirect('blogs');
     }
 
+    public function trash(){
+        $trashedBlogs = Blog::onlyTrashed()->get();
+        return view('blogs.trash', ['trashedBlogs'=> $trashedBlogs]);
+    }
+
 }
