@@ -19,10 +19,12 @@ class BlogsController extends Controller
     public function store(Request $request){
         $input = $request->all();
         $blog = Blog::create($input);
-        // $blog = new Blog();
-        // $blog->title = $request->title;
-        // $blog->body = $request->body;
-        // $blog->save();
         return redirect('/blogs');
     }
+
+    public function show($id){
+        $blog = Blog::findOrFail($id);
+        return view('blogs.show', compact('blog'));
+    }
+
 }
