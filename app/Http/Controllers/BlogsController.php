@@ -39,4 +39,10 @@ class BlogsController extends Controller
         return redirect('blogs');
     }
 
+    public function delete(Request $request, $id){
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+        return redirect('blogs');
+    }
+
 }
