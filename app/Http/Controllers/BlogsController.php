@@ -50,4 +50,10 @@ class BlogsController extends Controller
         return view('blogs.trash', ['trashedBlogs'=> $trashedBlogs]);
     }
 
+    public function restore($id){
+        $restoredBlog = Blog::onlyTrashed()->findOrFail($id);
+        $restoredBlog->restore($restoredBlog);
+        return redirect('blogs');
+    }
+
 }
