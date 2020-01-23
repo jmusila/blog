@@ -56,4 +56,10 @@ class BlogsController extends Controller
         return redirect('blogs');
     }
 
+    public function permanentDelete($id){
+        $permanentDeleteBlog = Blog::onlyTrashed()->findOrFail($id);
+        $permanentDeleteBlog->forceDelete($permanentDeleteBlog);
+        return back();
+    }
+
 }

@@ -12,6 +12,7 @@
         <h2>{{ $blog->title }}</h2>
         <p>{{ $blog->body }}</p>
 
+    <div class="btn-group">
     <!-- restore -->
     <form method="get" action="{{ route('blogs.restore', $blog->id) }}">
         @csrf
@@ -19,6 +20,16 @@
             Restore
         </button>
     </form>
+
+    <!-- permanent-delete -->
+    <form method="post" action="{{ route('blogs.permanent-delete', $blog->id) }}">
+        @csrf
+        {{ method_field('delete') }}
+        <button type="submit" class="btn btn-danger btn-xs pull-left btn-margin-right">
+            Permanent delete
+        </button>
+    </form> 
+    </div>
     @endforeach
 
 </div>
