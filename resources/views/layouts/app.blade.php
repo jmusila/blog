@@ -34,8 +34,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
-                            <a class="nav-link" href="{{ route('blogs.create') }}">
-                            Create
+                            <a class="nav-link" href="{{ route('admin.index') }}">
+                            Admin
                             </a>
                         </li>
                     </ul>
