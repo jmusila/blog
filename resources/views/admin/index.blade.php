@@ -7,13 +7,9 @@
             <h1>Admin Dashboard</h1>
          </div>
          <div class="col-md-12">
-            <button class="btn btn-primary btn-margin-right">
-                <a href="{{ route('blogs.create') }}" class="white-text">Create Blog</a>
-            </button>
+                <a href="{{ route('blogs.create') }}" class="white-text btn btn-primary btn-margin-right">Create Blog</a>
 
-            <button class="btn btn-danger btn-margin-right">
-                <a href="{{ route('blogs.trash') }}" class="white-text">Trashed Blogs</a>
-            </button>            
+                <a href="{{ route('blogs.trash') }}" class="white-text btn btn-danger btn-margin-right">Trashed Blogs</a>         
          </div>
     </div>
 
