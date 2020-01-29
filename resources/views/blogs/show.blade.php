@@ -22,9 +22,13 @@
 
         <div class="colmd-12">
             <p>{{ $blog->body }}</p>
-            
+            <hr>
+            <strong>Categories: </strong>
+            @foreach($blog->category as $category)
+                <span><a href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a></span>
+            @endforeach
         </div>
-    </article>
+    </article> 
     </div>
 
 @endsection

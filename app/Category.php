@@ -10,6 +10,6 @@ class Category extends Model
     protected $fillable = ['name', 'slug'];
 
     public function blog(){
-        return $this-belongsToMany(Blog::class);
+        return $this->belongsToMany(Blog::class);
     }
 }
