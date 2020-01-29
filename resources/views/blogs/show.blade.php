@@ -22,6 +22,7 @@
 
         <div class="colmd-12">
             <p>{{ $blog->body }}</p>
+            
         </div>
     </article>
     </div>

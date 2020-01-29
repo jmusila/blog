@@ -5,7 +5,17 @@
     <div class="container-fluid">
         <h1>{{ $category->name }}</h1>
 
-        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning btn-sm btn-margin-right">Edit</a>
+        <div class="btn-group">
+            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning btn-sm btn-margin-right">Edit</a>
+
+            <form action="{{ route('categories.destroy', $category->id) }}" method="post">
+            {{ method_field('delete') }}
+            @csrf
+                <button type="submit" class="btn btn-danger btn-sm pull-left">
+                    Delete
+                </button>
+            </form>
+        </div>
     </div>
 
 
