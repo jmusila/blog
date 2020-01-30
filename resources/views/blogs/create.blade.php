@@ -8,7 +8,7 @@
         </div>
 
         <div class="colmd-12">
-            <form action="{{ route('blogs.store') }}" method="post">
+            <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
