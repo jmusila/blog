@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Blog;
 use App\Category;
@@ -36,7 +37,14 @@ class BlogsController extends Controller
     public function edit($id){
         $categories = Category::latest()->get();
         $blog = Blog::findOrFail($id);
-        return view('blogs.edit', ['blog'=> $blog, 'categories'=>$categories]);
+
+        $bc = array();
+        foreach($blog->category as $c) {
+            $bc[] = $c->id-1;
+        }
+        $filtered = Arr::except($categories, $bc);
+
+        return view('blogs.edit', ['blog'=> $blog, 'categories'=>$categories, 'filtered'=>$filtered]);
     }
 
     public function update(Request $request, $id){

@@ -22,8 +22,19 @@
                 </div>
 
                 <div class="form-group form-check form-check-inline">
-                    @foreach($categories as $category)
-                        <input type="checkbox" value="{{ $category->id }}" name="category_id[]" class="form-check-input">
+                {{ $blog->category->count()  ? 'Current categories:  ' : ''}} &nbsp
+                    @foreach($blog->category as $category)
+                        <input type="checkbox" value="{{ $category->id }}" name="category_id[]" 
+                        class="form-check-input" checked>
+                        <label class="form-check-label btn-margin-right">{{ $category->name }}</label>
+                    @endforeach
+                </div>
+
+                <div class="form-group form-check form-check-inline">
+                {{ $filtered->count()  ? 'Unused categories:  ' : ''}} &nbsp
+                    @foreach($filtered as $category)
+                        <input type="checkbox" value="{{ $category->id }}" name="category_id[]" 
+                        class="form-check-input">
                         <label class="form-check-label btn-margin-right">{{ $category->name }}</label>
                     @endforeach
                 </div>
@@ -33,7 +44,7 @@
                 <button class="btn btn-primary" type="submit">Update blog</button>
                 </div>
 
-                
+
             </form>
         </div>
     </div>
