@@ -10,6 +10,7 @@
             @if($blog->featured_image)
                 <img src="/images/featured_image/{{ $blog->featured_image ? 
                 $blog->featured_image : '' }}" alt="{{ Str::limit($blog->title, 50) }}" class="img-responsive featured_image">
+                <br/>
             @endif
         </div>
 
