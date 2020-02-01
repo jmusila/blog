@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Blog;
 use App\Category;
@@ -21,6 +22,10 @@ class BlogsController extends Controller
 
     public function store(Request $request){
         $input = $request->all();
+        //meta stuff
+        $input['slug'] = Str::slug($request->title);
+        $input['meta_title'] = Str::limit($request->title, 55);
+        $input['meta_description'] = Str::limit($request->body, 155, ' (...)');
         
         //image upload
         if ($file = $request->file('featured_image')) {
