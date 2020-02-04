@@ -1,4 +1,4 @@
 # Laravel Blog
 
 ## Author
-<a>https://github.com/jonathanmusila/</a> :smiley:
+**[Jonathan Musila](https://github.com/jonathanmusila)** :smiley:
