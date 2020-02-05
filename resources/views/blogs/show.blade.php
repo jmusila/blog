@@ -2,14 +2,14 @@
 
 @section('content')
 
-<!-- @include('partials.meta_dynamic') -->
-@section('meta_title')
+@include('partials.meta_dynamic')
+<!-- @section('meta_title')
     {{ $blog->meta_title }}
 @endsection
 
 @section('meta_description')
     {{ $blog->meta_description }}
-@endsection
+@endsection -->
 
     <div class="container-fluid">
     <article>
