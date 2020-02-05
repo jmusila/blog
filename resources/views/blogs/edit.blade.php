@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="title">Body</label>
-                    <textarea name="body" class="form-control">{!! $blog->body !!}</textarea>
+                    <textarea name="body" class="form-control my-editor">{{ $blog->body }}</textarea>
                 </div>
 
                 <div class="form-group form-check form-check-inline">

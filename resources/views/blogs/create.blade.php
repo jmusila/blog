@@ -18,7 +18,7 @@
 
                 <div class="form-group">
                     <label for="title">Body</label>
-                    <textarea name="body" class="form-control"></textarea>
+                    <textarea name="body" class="form-control my-editor">{!! old('body') !!}</textarea>
                 </div>
 
                 <div class="form-group form-check form-check-inline">
