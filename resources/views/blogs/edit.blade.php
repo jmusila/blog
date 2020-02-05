@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('partials.tinymce')
 
     <div class="container-fluid">
         <div class="jumbotron">
@@ -18,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="title">Body</label>
-                    <textarea name="body" class="form-control">{{ $blog->body }}</textarea>
+                    <textarea name="body" class="form-control">{!! $blog->body !!}</textarea>
                 </div>
 
                 <div class="form-group form-check form-check-inline">
