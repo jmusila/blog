@@ -11,8 +11,10 @@ use App\Category;
 class BlogsController extends Controller
 {
     public function index(){
-        $blogs = Blog::latest()->get();
+        $blogs = Blog::where('status', 1)->latest()->get();
+        // $blogs = Blog::latest()->get();
         return view('blogs.index', ['blogs'=> $blogs]);
+
     }
 
     public function create(){

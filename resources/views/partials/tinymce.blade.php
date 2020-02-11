@@ -1,7 +1,7 @@
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script>
   var editor_config = {
-    path_absolute : "/",
+    path_absolute : "{{ url('/') }}/",
     selector: "textarea.my-editor",
     plugins: [
       "advlist autolink lists link image charmap print preview hr anchor pagebreak",
