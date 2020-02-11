@@ -13,7 +13,7 @@
                 <li>
                     <a class="nav-link" href="{{ route('blogs') }}">
                     Blogs <span class="badge bg-dark text-white">
-                    {{ $blog->count() }}
+                    {{ $blogs->count() }}
                     </span>
                     </a>
                 </li>
