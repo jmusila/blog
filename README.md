@@ -9,4 +9,4 @@
 - create database and run the migrations `$ php artisan migrate --seed`
 
 ## Author
-**[Jonathan Musila](https://github.com/jonathanmusila)** :smiley:
+**[Jonathan Musila](https://github.com/jonathanmusila)** :smiley: :smiley:
