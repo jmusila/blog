@@ -18,8 +18,8 @@
                     <form action="{{ route('blogs.update', $blog->id) }}" method="post">
                         @csrf
                         {{ method_field('patch') }}
-                        <input name="status" type="checkbox" value="0" checked>
-                        <button type="submit" class="bt btn-success btn-xs">Save as draft</button>
+                        <input name="status" type="checkbox" value="0" checked style="display:none;">
+                        <button type="submit" class="bt btn-warning btn-xs">Save as draft</button>
                     </form>
 
                 @endforeach
@@ -30,6 +30,13 @@
                 @foreach($draftBlogs as $blog)
                         <h2><a href={{ route('blogs.show', $blog->id) }}>{{ $blog->title }}</a></h2>
                         {!! Str::limit($blog->body, 100) !!}
+
+                <form action="{{ route('blogs.update', $blog->id) }}" method="post">
+                        @csrf
+                        {{ method_field('patch') }}
+                        <input name="status" type="checkbox" value="1" checked style="display:none;">
+                        <button type="submit" class="bt btn-success btn-xs">Publish</button>
+                </form>
                 @endforeach
             </div>
         </div>
