@@ -36,10 +36,11 @@ class BlogsController extends Controller
             $input['featured_image'] = $name;
         }
 
-        $blog = Blog::create($input);
+        // $blog = Blog::create($input);
+        $blogByUser = $request->user()->blogs()->create($input);
         // sync with categories
         if ($request->category_id) {
-            $blog->category()->sync($request->category_id);
+            $blogByUser->category()->sync($request->category_id);
         }
         return redirect('/blogs');
     }
