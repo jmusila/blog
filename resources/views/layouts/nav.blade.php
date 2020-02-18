@@ -18,11 +18,6 @@
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{ route('admin.index') }}">
-                    Admin
-                    </a>
-                </li>
-                <li>
                     <a class="nav-link" href="{{ route('categories.index') }}">
                     Categories
                     </a>
@@ -31,6 +26,26 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
+                @if(Auth::user() && Auth::user()->role_id === 1)
+                <li>
+                    <a class="nav-link" href="{{ route('admin.index') }}">
+                    Admin
+                    </a>
+                </li>
+
+                @elseif(Auth::user() && Auth::user()->role_id === 2)
+                <li>
+                    <a class="nav-link" href="{{ route('admin.index') }}">
+                    Author
+                    </a>
+                </li>
+                @elseif(Auth::user() && Auth::user()->role_id === 3)
+                <li>
+                    <a class="nav-link">
+                    Subscriber
+                    </a>
+                </li>
+                @endif
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
