@@ -23,3 +23,4 @@ Route::get('/admin/blogs', 'AdminController@blogs')->name('admin.blogs');
 
 // route resource
 Route::resource('categories', 'CategoryController');
+Route::resource('users', 'UserController');
