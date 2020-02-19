@@ -7,7 +7,9 @@ use App\User;
 
 class UserController extends Controller
 {
-
+    /**
+     * Only admins have access to this methods
+     */
     public function __construct(){
         $this->middleware('admin');
     }
