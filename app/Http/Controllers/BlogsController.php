@@ -51,8 +51,9 @@ class BlogsController extends Controller
         return redirect('/blogs');
     }
 
-    public function show($id){
-        $blog = Blog::findOrFail($id);
+    public function show($slug){
+        // $blog = Blog::findOrFail($id);
+        $blog = Blog::whereSlug('slug')->first();
         return view('blogs.show', ['blog'=> $blog]);
     }
 
