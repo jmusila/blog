@@ -5,7 +5,7 @@
 
     <div class="container">
         @foreach($blogs as $blog)
-            <h2><a href={{ route('blogs.show', $blog->slug) }}>{{ $blog->title }}</a></h2>
+            <h2><a href="{{ route('blogs.show', ['$blog->slug']) }}">{{ $blog->title }}</a></h2>
             {!! $blog->body !!}
 
             @if($blog->user)
