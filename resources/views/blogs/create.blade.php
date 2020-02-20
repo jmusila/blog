@@ -10,6 +10,15 @@
 
         <div class="colmd-12">
             <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">
+
+            @if(count($errors))
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <li style="list-style-type:none">{{ $error }}</li>
+                    @endforeach
+                </div>
+            @endif
+
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
