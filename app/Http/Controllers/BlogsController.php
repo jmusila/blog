@@ -29,6 +29,15 @@ class BlogsController extends Controller
     }
 
     public function store(Request $request){
+
+        //validation
+		$rules = [
+			'title' => ['required', 'min:20', 'max:160'],
+			'body' => ['required', 'min:200'],
+        ];
+        
+        $this->validate($request, $rules);
+        
         $input = $request->all();
         //meta stuff
         $input['slug'] = Str::slug($request->title);
