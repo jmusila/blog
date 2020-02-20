@@ -14,22 +14,23 @@
          </div>
          @if(Auth::user() && Auth::user()->role_id === 1)
          <div class="col-md-12">
-                <a href="{{ route('blogs.create') }}" class="white-text btn btn-primary btn-margin-right">Create Blog</a>
-                <a href="{{ route('admin.blogs') }}" class="white-text btn btn-primary btn-margin-right">Publish Blogs</a>
-                <a href="{{ route('blogs.trash') }}" class="white-text btn btn-danger btn-margin-right">Trashed Blogs</a>  
+                <a href="{{ route('blogs.create') }}" class="btn btn-primary btn-margin-right">Create Blog</a>
+                <a href="{{ route('admin.blogs') }}" class="btn btn-success btn-margin-right">Publish Blogs</a>
+                <a href="{{ route('blogs.trash') }}" class="btn btn-danger btn-margin-right">Trashed Blogs</a>  
 
-                <a href="{{ route('categories.create') }}" class="white-text btn btn-success btn-margin-right">Create Categories</a>        
+                <a href="{{ route('categories.create') }}" class="btn btn-info btn-margin-right">Create Categories</a> 
+                <a href="{{ route('users.index') }}" class="btn btn-warning btn-margin-right">Manage Users</a>       
          </div>
          @endif
          @if(Auth::user() && Auth::user()->role_id === 2)
          <div class="col-md-12">
-                <a href="{{ route('blogs.create') }}" class="white-text btn btn-primary btn-margin-right">Create Blog</a>  
-                <a href="{{ route('categories.create') }}" class="white-text btn btn-success btn-margin-right">Create Categories</a>        
+                <a href="{{ route('blogs.create') }}" class="btn btn-primary btn-margin-right">Create Blog</a>  
+                <a href="{{ route('categories.create') }}" class="btn btn-success btn-margin-right">Create Categories</a>        
          </div>
          @endif
          @if(Auth::user() && Auth::user()->role_id === 3)
          <div class="col-md-12">
-                <a href="#" class="white-text btn btn-primary btn-margin-right">What can I do?</a>       
+                <a href="#" class="btn btn-primary btn-margin-right">What can I do?</a>       
          </div>
          @endif
     </div>

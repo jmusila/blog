@@ -11375,10 +11375,17 @@ margin-left: -20px;
 margin-top: -25px;
 }
 
+.jumbotron {
+   color: #ffffff;
+   border-bottom: 1px solid #d3e0e9;
+   border-radius: 0 !important;
+   background: linear-gradient(to right, #3097d4, #ffffff );
+}
+
 .white-text {
    color: #ffffff; 
 }
 
 .featured_image{
-width:100%;
+width:100%; 
 }

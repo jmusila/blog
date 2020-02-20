@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Blog;
 use App\Category;
+use Session;
 
 class BlogsController extends Controller
 {
@@ -57,6 +58,9 @@ class BlogsController extends Controller
         if ($request->category_id) {
             $blogByUser->category()->sync($request->category_id);
         }
+
+        Session::flash('blog_created_message', 'New Blog Created!');
+
         return redirect('/blogs');
     }
 
