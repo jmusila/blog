@@ -40,6 +40,12 @@
                     @endforeach
                 </div>
 
+                <div class="form-group">
+                  <label class="btn btn-default">
+                   <span class="btn btn-outline btn-sm btn-info">Featured Image</span>
+                   <input type="file" name="featured_image" class="form-control" hidden>
+                 </label>
+               </div>
 
                 <div>
                 <button class="btn btn-primary" type="submit">Update blog</button>
