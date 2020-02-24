@@ -18,6 +18,9 @@
             <div class="col-md-12">
                 <h1>{{ $blog->title }}</h1>
             </div>
+
+            @if(Auth::user())
+            @if(Auth::user()->role_id === 1 || Auth::user()->role_id === 2 && Auth::user()->id === $blog->user_id)
             <div class="col-md-12">
                 <div class="btn-group">
                     <a class="btn btn-primary btn-sm pull-left btn-margin-right" href="{{ route('blogs.edit', $blog->id) }}">Edit  </a>
@@ -28,6 +31,8 @@
                     </form>
                 </div>
             </div>
+            @endif
+            @endif
         </div>
 
         <div class="colmd-12">

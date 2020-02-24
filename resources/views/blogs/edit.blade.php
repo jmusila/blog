@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
         <div class="jumbotron">
-            <h1>Edit</h1>
+            <h1>Edit | {{$blog->title}}</h1>
         </div>
 
         <div class="colmd-12">

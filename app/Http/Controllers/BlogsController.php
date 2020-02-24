@@ -43,7 +43,7 @@ class BlogsController extends Controller
         //meta stuff
         $input['slug'] = Str::slug($request->title);
         $input['meta_title'] = Str::limit($request->title, 55);
-        $input['meta_description'] = Str::limit($request->body, 155, ' (...)');
+        $input['meta_description'] = Str::limit($request->body, 155);
         
         //image upload
         if ($file = $request->file('featured_image')) {
