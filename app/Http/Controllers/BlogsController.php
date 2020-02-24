@@ -48,7 +48,7 @@ class BlogsController extends Controller
         //image upload
         if ($file = $request->file('featured_image')) {
             $name = uniqid().$file->getClientOriginalName();
-            $name = srttolower(str_replace(' ', '-', $name));
+            $name = strtolower(str_replace(' ', '-', $name));
             $file->move('images/featured_image/', $name);
             $input['featured_image'] = $name;
         }
