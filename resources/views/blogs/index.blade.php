@@ -25,8 +25,12 @@
 
             <div class="lead">{!! Str::limit($blog->body, 200) !!}</div>
 
+            @if(Auth::user())
             @if($blog->user)
                 Author: <a href="{{ route('users.show', $blog->user->name) }}">{{ $blog->user->name }}</a> | Posted: {{ $blog->created_at->diffForHUmans() }}
+            @endif
+            @elseif($blog->user != Auth::user())
+                Author: <b>{{ $blog->user->name }}</b> | Posted: {{ $blog->created_at->diffForHUmans() }}
             @endif
         </div>
         <br><hr><br>
