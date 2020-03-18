@@ -13,11 +13,15 @@ class AddUserIdToBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::table('blogs', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->index()->nullable();
+        if(!Schema::hasTable('blogs')){
+            Schema::table('blogs', function (Blueprint $table) {
+                if (!Schema::hasColumn('user_id')) {
+                    $table->integer('user_id')->unsigned()->index()->nullable();
+                    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+                }  
+            });
+        }
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
     }
 
     /**
@@ -27,9 +31,13 @@ class AddUserIdToBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::table('blogs', function (Blueprint $table) {
-            $table->dropForeign('user_id');
-            $table->dropColumn('user_id');
-        });
+        if(!Schema::hasTable('blogs')){
+            Schema::table('blogs', function (Blueprint $table) {
+                if (!Schema::hasColumn('user_id')) {
+                    $table->dropForeign('user_id');
+                    $table->dropColumn('user_id');
+                }
+            });
+        }    
     }
 }
