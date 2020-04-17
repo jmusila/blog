@@ -18,7 +18,6 @@
             <div class="col-md-12">
                 <h1>{{ $blog->title }}</h1>
             </div>
-            {{dd($blog)}}
             @if(Auth::user())
             @if(Auth::user()->role_id === 1 || Auth::user()->role_id === 2 && Auth::user()->id === $blog->user_id)
             <div class="col-md-12">

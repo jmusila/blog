@@ -13,7 +13,7 @@
         @endif
         @foreach($blogs as $blog)
         <div class="col-md-8 offset-md-2 text-center">
-            <h2><a href="{{ route('blogs.show', ['$blog->slug']) }}">{{ $blog->title }}</a></h2>
+            <h2><a href="{{ route('blogs.show', [$blog->slug]) }}">{{ $blog->title }}</a></h2>
 
             <div class="col-md-12">
             @if($blog->featured_image)
