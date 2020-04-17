@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid">
+<div class="container">
     <div class="jumbotron">
         <h1>Trashed Blogs</h1>
     </div>

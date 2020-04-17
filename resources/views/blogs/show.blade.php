@@ -3,7 +3,7 @@
 @include('partials.meta_dynamic')
 @section('content')
 
-    <div class="container-fluid">
+    <div class="container">
     <article>
         <div class="jumbotron">
 

@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.tinymce')
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="jumbotron">
             <h1>Edit | {{$blog->title}}</h1>
         </div>

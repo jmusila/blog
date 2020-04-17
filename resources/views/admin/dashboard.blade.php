@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="jumbotron">
             @if(Auth::user() && Auth::user()->role_id === 1)
                 <h1>Admin Dashboard</h1>

@@ -19,7 +19,6 @@ class BlogsController extends Controller
 
     public function index(){
         $blogs = Blog::where('status', 1)->latest()->get();
-        // $blogs = Blog::latest()->get();
         return view('blogs.index', ['blogs'=> $blogs]);
 
     }
